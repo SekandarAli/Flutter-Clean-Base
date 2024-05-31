@@ -1,11 +1,9 @@
-import 'package:base_architecture_project/mvvm/view_model/firebase/events.dart';
 import 'package:base_architecture_project/mvvm/view_model/utils/color/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ReusableWidgets {
-  static AnalyticsService analyticsService = AnalyticsService();
 
   static Widget dummyWidget({
     required Function() onPress,
@@ -15,7 +13,6 @@ class ReusableWidgets {
       splashColor: ColorsTheme.pink,
       borderRadius: BorderRadius.circular(10),
       onTap: (){
-        analyticsService.logEvent(eventName: 'dummy');
         onPress();
       },
       child: SizedBox(child: Text(text),),

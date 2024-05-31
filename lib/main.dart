@@ -2,8 +2,6 @@
 
 import 'dart:async';
 import 'package:base_architecture_project/mvvm/view_model/controller/language/language_controller.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,14 +17,13 @@ void main() async {
 
 Future<void> initializeApp() async {
 
-  /// Crashlytics Initialization
-  Firebase.initializeApp();
-
-  ///Crashlytics
-  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
-
   /// ScreenUtils
   ScreenUtil.ensureScreenSize();
+
+  /// Language Controller
+  final languageController = LanguageController();
+  languageController.initializeLocale();
+  Get.put(languageController);
 
 }
 
@@ -59,7 +56,7 @@ class MyApp extends StatelessWidget {
                 secondary: ColorsTheme.primaryColor,
               ),
             ),
-            home: Container(),
+            home: Scaffold(body: Container(color: Colors.orange,)),
           ),
         );
       },

@@ -13,16 +13,12 @@ dependencies:
     sdk: flutter
 
   get: ^4.6.6
-  flutter_screenutil: ^5.9.0
+  flutter_screenutil: ^5.9.1
 
-  shared_preferences: ^2.2.2
+  shared_preferences: ^2.2.3
   connectivity_plus: ^4.0.2
 
-  firebase_crashlytics: ^3.4.17
-  firebase_analytics: ^10.8.8
-  firebase_core: ^2.27.0
-
-  cupertino_icons: ^1.0.6
+  cupertino_icons: ^1.0.8
 
 dev_dependencies:
   flutter_test:
